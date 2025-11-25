@@ -34,14 +34,21 @@
             Edit
           </a>
 
-          {{-- Hapus --}}
-          <form action="{{ route('admin.students.destroy', $student->id) }}" 
-                method="POST" 
-                class="d-inline">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger btn-sm">Hapus</button>
-          </form>
+         {{-- Hapus --}}
+        <form action="{{ route('admin.students.destroy', $student->id) }}"
+          method="POST"
+          class="d-inline"
+          onsubmit="return confirm('Apakah kamu yakin ingin menghapus data siswa ini?')">
+
+          @csrf
+          @method('DELETE')
+
+          <button type="submit" class="btn btn-danger btn-sm">
+           Hapus
+          </button>
+        </form>
+
+
         </td>
       </tr>
       @endforeach
