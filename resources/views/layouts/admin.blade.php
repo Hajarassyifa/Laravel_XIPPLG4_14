@@ -41,34 +41,60 @@
   </nav>
 
   <!-- Sidebar -->
-  <aside class="main-sidebar elevation-2">
-    <a href="{{ url('/admin/dashboard') }}" class="brand-link text-center">
-      <img src="{{ asset('images/logo.png') }}" class="brand-image img-circle elevation-2" alt="Logo" style="opacity:.9">
-      <span class="brand-text text-light">Dilesin Academy</span>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    {{-- Brand / Header Orange --}}
+    <a href="{{ route('admin.dashboard') }}" class="brand-link bg-warning d-flex align-items-center">
+        <span class="brand-text font-weight-bold">Dilesin</span>
+        <span class="brand-text font-weight-light ml-1">Dilesin Admin</span>
     </a>
 
     <div class="sidebar">
-      <nav class="mt-3">
-        <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
-          <li class="nav-item">
-            <a href="{{ url('/admin/dashboard') }}" class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-tachometer-alt"></i><p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-gamepad"></i><p>Produk</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-shopping-cart"></i><p>Orders</p>
-            </a>
-          </li>
-        </ul>
-      </nav>
+
+        {{-- User Panel (AD Admin) --}}
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image d-flex align-items-center justify-content-center rounded-circle bg-secondary"
+                 style="width: 35px; height: 35px;">
+                <span class="text-white font-weight-bold">AD</span>
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Admin</a>
+            </div>
+        </div>
+
+        {{-- Menu --}}
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+
+                {{-- Dashboard --}}
+                <li class="nav-item">
+                    <a href="{{ route('admin.dashboard') }}"
+                       class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                {{-- Data Student --}}
+                <li class="nav-item">
+                    <a href="{{ route('admin.students.index') }}"
+                       class="nav-link {{ request()->routeIs('admin.students.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Data Student</p>
+                    </a>
+                </li>
+
+                {{-- Settings --}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
     </div>
-  </aside>
+</aside>
 
   <!-- Konten -->
   <div class="content-wrapper p-3">
