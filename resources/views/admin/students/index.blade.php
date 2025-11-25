@@ -29,6 +29,10 @@
         <td>{{ $student->nisn }}</td>
 
         <td>
+          {{-- Lihat --}}
+          <a href="{{ route('admin.students.show', $student->id) }}"class="btn btn-info btn-sm">
+            Lihat
+         </a>
           {{-- Edit --}}
           <a href="{{ route('admin.students.edit', $student->id) }}" class="btn btn-warning btn-sm">
             Edit
@@ -47,8 +51,7 @@
            Hapus
           </button>
         </form>
-
-
+        
         </td>
       </tr>
       @endforeach
