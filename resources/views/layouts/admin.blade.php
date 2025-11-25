@@ -44,7 +44,7 @@
   <aside class="main-sidebar elevation-2">
     <a href="{{ url('/admin/dashboard') }}" class="brand-link text-center">
       <img src="{{ asset('images/logo.png') }}" class="brand-image img-circle elevation-2" alt="Logo" style="opacity:.9">
-      <span class="brand-text text-light">Gaming Store</span>
+      <span class="brand-text text-light">Dilesin Academy</span>
     </a>
 
     <div class="sidebar">
@@ -76,8 +76,9 @@
   </div>
 
   <footer class="main-footer text-center">
-    © {{ date('Y') }} Gaming Store. All rights reserved.
+    <strong>&copy; {{ date('Y') }} Dilesin Academy</strong> — All rights reserved.
   </footer>
+
 </div>
 
 <!-- Scripts -->
